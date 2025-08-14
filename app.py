@@ -44,4 +44,5 @@ if st.button("送信"):
         st.markdown("### 回答")
         st.write(response)
     else:
-        st.warning("質問内容を入力
+        st.warning("質問内容を入力してください。")
+        
