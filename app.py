@@ -1,6 +1,4 @@
 import streamlit as st
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage
 
 # LLM応答関数
 def get_llm_response(user_input: str, expert_type: str) -> str:
