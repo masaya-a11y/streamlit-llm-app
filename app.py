@@ -1,12 +1,12 @@
 import streamlit as st
-from langchain_openai import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
 # LLM応答関数
 def get_llm_response(user_input: str, expert_type: str) -> str:
     expert_system_messages = {
         "医療専門家": "あなたは医療分野の専門家です。専門的かつ分かりやすく回答してください。",
-        "法律専門家": "あなたは法律分野の専門家です。法的観点から丁寧に回答してください。",
+        "法律専門": "あなたは法律分野の専門家です。法的観点から丁寧に回答してください。",
         "IT専門家": "あなたはIT分野の専門家です。技術的な観点から分かりやすく回答してください。"
     }
     system_message = expert_system_messages.get(expert_type, "あなたは親切なアシスタントです。")
@@ -45,4 +45,3 @@ if st.button("送信"):
         st.write(response)
     else:
         st.warning("質問内容を入力してください。")
-        
